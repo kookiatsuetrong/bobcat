@@ -37,7 +37,7 @@ public class Bobcat {
 			}
 		}
 
-		LogManager.getLogManager().reset();
+		// LogManager.getLogManager().reset();
 
 		/*
 		Logger logger = Logger.getGlobal();
