@@ -45,17 +45,13 @@ public class Bobcat {
 				descriptor = data[i];
 			}
 		}
-		if (descriptor == null) { 
-			descriptor = home + "/WEB-INF/web.xml"; 
-		}
 
-		// LogManager.getLogManager().reset();
+		LogManager.getLogManager().reset();
 		/*
 		Logger logger = Logger.getGlobal();
 		System.out.println(logger);
 		logger.setLevel(Level.OFF);
 		*/
-		
 
 		try {
 			var tomcat = new Tomcat();
@@ -65,7 +61,10 @@ public class Bobcat {
 			
 			File file = new File(home);
 			var context = tomcat.addWebapp("", file.getAbsolutePath());
-			context.setAltDDName(descriptor);
+			if (descriptor == null) { }
+			if (descriptor != null) {
+				context.setAltDDName(descriptor);
+			}
 			
 			var connector = tomcat.getConnector(); // Mandatory
 			tomcat.start();
