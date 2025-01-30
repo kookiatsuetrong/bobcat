@@ -48,6 +48,7 @@ Connecting to Ollama
 <%@page import="org.json.JSONArray"         %>
 <%@page import="org.json.JSONObject"        %>
 
+<pre style="white-space: pre-wrap;">
 <%
 	JSONObject detail = new JSONObject();
 	detail.put("model", "deepseek-r1:1.5b");
@@ -77,5 +78,5 @@ Connecting to Ollama
 	Object result = root.get("response");
 	out.println(result);
 %>
-
+</pre>
 ```
