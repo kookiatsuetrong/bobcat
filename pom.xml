@@ -24,6 +24,11 @@
 			<artifactId>tomcat-embed-websocket</artifactId>
 			<version>RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>RELEASE</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<sourceDirectory>code</sourceDirectory>
