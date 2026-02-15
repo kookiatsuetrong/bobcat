@@ -83,8 +83,3 @@ public class Bobcat {
 		*/
 	}
 }
-
-// --port 12345
-// --home web
-// --war sample.war
-

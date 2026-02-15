@@ -1,56 +1,70 @@
-
-	4.0.0
-	com.immerpark
-	bobcat
-	release
-	
-		
-			org.apache.tomcat.embed
-			tomcat-embed-core
-			RELEASE
-		
-		
-			org.apache.tomcat.embed
-			tomcat-embed-jasper
-			RELEASE
-		
-		
-			org.apache.tomcat.embed
-			tomcat-embed-el
-			RELEASE
-		
-		
-			org.apache.tomcat.embed
-			tomcat-embed-websocket
-			RELEASE
-		
-		
-			org.json
-			json
-			RELEASE
-		
-	
-	
-		code
-		test
-		
-			
-				maven-assembly-plugin
-				
-					
-						
-							Bobcat
-						
-					
-					
-						jar-with-dependencies
-					
-				
-      
-			
-		
-	
-	
-		25
-	
-
+<project>
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>work.codestar</groupId>
+	<artifactId>bobcat</artifactId>
+	<version>release</version>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-core</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-el</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-websocket</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-dbcp</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.tomcat.experimental</groupId>
+			<artifactId>tomcat-embed-programmatic</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.jdt</groupId>
+			<artifactId>ecj</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>RELEASE</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<sourceDirectory>code</sourceDirectory>
+		<testSourceDirectory>test</testSourceDirectory>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>Bobcat</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+	<properties>
+		<maven.compiler.release>25</maven.compiler.release>
+	</properties>
+</project>
