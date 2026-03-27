@@ -1,6 +1,8 @@
 # bobcat
 A minimal version of Tomcat
 
+![](bobcat.png)
+
 Building Bobcat
 ```bash
 mvn package assembly:single
